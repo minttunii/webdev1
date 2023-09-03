@@ -44,6 +44,13 @@ module.exports = {
     // named "value"
     const answerText = answer.value.toLowerCase();
 
+    if (answerText.includes('mocha!') && answerText.includes('hi')) {
+      return maxPoints;
+    }
+    if ((answerText.includes('mocha') && !answerText.includes('hi!')) 
+    || (!answerText.includes('mocha!') && answerText.includes('hi'))) {
+      return maxPoints/5;
+    }
     if (answerText.includes('FIXME') && !answerText.includes('FIXME')) {
       points += maxPoints / 5;
     }
