@@ -14,7 +14,7 @@ http.createServer(function(req, res){
     }
     else{
         res.statusCode = 404;
-        res.statusMessage = 'Request content not found';
+        res.statusMessage = 'Requested content not found';
         res.end();
     }
 }).listen(3000);
