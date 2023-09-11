@@ -9,7 +9,7 @@ http.createServer(function(req, res){
     else if(req.url.includes('/bradbury')){
         readFileSendResponse('bradbury.html', 'text/html', res);
     }
-    else if(req.url.includes('/')){
+    else if(req.url == '/'){
         readFileSendResponse('index.html', 'text/html', res);
     }
     else{
