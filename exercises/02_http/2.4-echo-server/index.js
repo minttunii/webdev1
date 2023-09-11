@@ -13,7 +13,7 @@ server = http.createServer(function(req, res){
     })
     .on('end', () => {
       body = Buffer.concat(body).toString();
-      res.writeHead(202, { 'Content-Type': 'text/plain' });
+      res.writeHead(200, { 'Content-Type': 'text/plain' });
       res.write(reverseString(body));
       res.end();
     });
