@@ -22,4 +22,7 @@ ol.insertBefore(li0, ol.children[0]);
 // Delete the second element from unordered list
 document.getElementById("todo").removeChild(document.getElementById("todo").children[1]);
 
-//Remove navi from todo list
+// Add class list to nav list ul
+var li = document.createElement("li");
+li.classList.add("list");
+ul.appendChild(li);
