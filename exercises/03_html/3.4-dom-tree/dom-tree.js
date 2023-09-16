@@ -23,6 +23,4 @@ ol.insertBefore(li0, ol.children[0]);
 document.getElementById("todo").removeChild(document.getElementById("todo").children[1]);
 
 // Add class list to nav list ul
-var li = document.createElement("li");
-li.classList.add("list");
-ul.appendChild(li);
+ul.classList.add("list");
