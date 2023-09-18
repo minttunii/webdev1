@@ -13,7 +13,7 @@ const template = document.getElementById("contact-template");
     // Email
     clone.querySelector(".email").textContent = formData.get("email");
     // Homepage
-    clone.querySelector(".homepage a").textContent = formData.get("email");
+    clone.querySelector(".homepage a").textContent = formData.get("homepage");
     clone.querySelector(".homepage a").setAttribute("href", formData.get("homepage"));
     // Append clone into contacts
     contacts.appendChild(clone);
