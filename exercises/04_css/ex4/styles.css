@@ -7,8 +7,12 @@
 body {
   display: grid;
   grid-template-rows: min-content auto min-content;
-  /* TODO: modify the line below to add the needed grid-template-areas for header, main, and footer elements*/
-  grid-template-areas: "";
+  /* TODO: modify the line below to add the needed grid-template-areas
+  / for header, main, and footer elements*/
+  grid-template-areas:
+  "h"
+  "m"
+  "f";
   height: 100vh;
 }
 
@@ -37,7 +41,10 @@ article {
     grid-template-areas:    "a1 b1"
                             "a2 b2";
   */
-  grid-template-areas: "";
+  grid-template-areas:
+  "s1 a1"
+  "s2 a2"
+  "s3 .";
   height: 100%;
 }
 
@@ -58,17 +65,37 @@ footer {
   background-color: darkslategray;
   grid-area: f;
   display: grid;
-  /* TODO: modify the line below to add the needed grid-template-areas for the navigation elements*/
-  grid-template-areas: "";
+  /* TODO: modify the line below to add the needed grid-template-areas
+  for the navigation elements*/
+  grid-template-areas: 
+  "n1 n2";
   padding: 1.5rem;
 }
 
-
-/* TODO: add the needed CSS rules below to set the required grid-area for each element with an ID, including the sections, asides, and navigation elements. 
-
-An example:
-#element_id {
-    grid-area: ONE_OF_GRID_TEMPLATE_AREAS;
+#sec1 {
+  grid-area: s1;
 }
 
-*/
+#sec2 {
+  grid-area: s2;
+}
+
+#sec3 {
+  grid-area: s3;
+}
+
+#aside1 {
+  grid-area: a1;
+}
+
+#aside2 {
+  grid-area: a2;
+}
+
+#nav1 {
+  grid-area: n1;
+}
+
+#nav2 {
+  grid-area: n2;
+}
