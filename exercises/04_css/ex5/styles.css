@@ -23,7 +23,7 @@ header {
   width: 100%;
   min-height: 15%;
   /* TODO: needed grid stuff */
-  min-width: 400px;
+  grid-template-columns: repeat(auto-fill(400px, 1fr));
   grid-area: h;
 
 }
@@ -44,7 +44,6 @@ article {
   "s1 a1"
   "s2 a2"
   "s3 .";
-  min-width: 400px;
 
 }
 
@@ -54,7 +53,6 @@ footer {
   min-height: 15%;
   /* TODO: needed grid stuff */
   grid-template-areas: "n1 n2";
-  min-width: 400px;
 }
 
 nav {
@@ -64,7 +62,6 @@ nav {
 
 header nav {
   width: 100%;
-  min-width: 400px;
 }
 
 #sec1 {
