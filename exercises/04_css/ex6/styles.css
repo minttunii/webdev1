@@ -62,43 +62,26 @@ footer {
   padding: 1.5rem;
 }
 
-#sec1 {
-  grid-area: s1;
-}
-
-#sec2 {
-  grid-area: s2;
-}
-
-#sec3 {
-  grid-area: s3;
-}
-
-#aside1 {
-  grid-area: a1;
-}
-
-#aside2 {
-  grid-area: a2;
-}
-
-#nav1 {
-  grid-area: n1;
-}
-
-#nav2 {
-  grid-area: n2;
-}
+#sec1 { grid-area: s1; }
+#sec2 { grid-area: s2;}
+#sec3 { grid-area: s3;}
+#aside1 { grid-area: a1;}
+#aside2 { grid-area: a2;}
+#nav1 { grid-area: n1;}
+#nav2 { grid-area: n2;}
 
 /*Small phone*/
 @media screen and (max-width: 600px){
-  body {
+  article {
     grid-template-areas: 
     "s1"
     "s2"
     "s3"
     "a1"
-    "a2"
+    "a2";
+  }
+  footer {
+    grid-template-areas:
     "n1"
     "n2";
   }
@@ -106,42 +89,54 @@ footer {
 
 /*Phone*/
 @media screen and (min-width: 600px) and (max-width: 767px){
-  body {
+  article {
     grid-template-areas: 
     "s1 a1"
     "s2 a2"
-    "s3 ."
+    "s3 .";
+  }
+  footer {
+    grid-template-areas:
     "n1 n2";
   }
 }
 
 /*Tablet*/
 @media screen and (min-width: 768px) and (max-width: 991px){
-  body {
+  article {
     grid-template-areas: 
     "s1 a1"
     "s2 a2"
-    "s3 ."
+    "s3 .";
+  }
+  footer {
+    grid-template-areas:
     "n1 n2";
   }
 }
 
 /*Desktop*/
 @media screen and (min-width: 992px) and (max-width: 1199px){
-  body {
+  article {
     grid-template-areas: 
     "s1 s2 s3"
-    "a1 a2 ."
+    "a1 a2 .";
+  }
+  footer {
+    grid-template-areas:
     "n1 n2 .";
   }
 }
 
 /*Wide desktop*/
 @media screen and (min-width: 1200px){
-  body {
+  article {
     grid-template-areas: 
     "s1 s2 s3"
-    "a1 a2 ."
+    "a1 a2 .";
+  }
+  footer {
+    grid-template-areas:
     "n1 n2 .";
   }
 }
