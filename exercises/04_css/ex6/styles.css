@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  border-collapse: collapse;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  transition: width 3s;
+  grid-template-areas:
+  "h"
+  "a"
+  "f";
+}
+
+body:hover {
+  width: 10%;
+}
+
+/*Small phone*/
+@media screen and (max-width: 600px){
+  body {
+    height: 100%;
+    grid-template-areas: 
+    "s1"
+    "s2"
+    "s3"
+    "a1"
+    "a2"
+    "n1"
+    "n2";
+  }
+}
+
+/*Phone*/
+@media screen and (min-width: 600px){
+  body {
+    height: 100%;
+    grid-template-areas: 
+    "s1 a1"
+    "s2 a2"
+    "s3 ."
+    "n1 n2";
+  }
+}
+
+/*Tablet*/
+@media screen and (min-width: 768px){
+  body {
+    height: 100%;
+    grid-template-areas: 
+    "s1 a1"
+    "s2 a2"
+    "s3 ."
+    "n1 n2";
+  }
+}
+
+/*Desktop*/
+@media screen and (min-width: 992px){
+  body {
+    height: 100%;
+    grid-template-areas: 
+    "s1 s2 s3"
+    "a1 a2 ."
+    "n1 n2 .";
+  }
+}
+
+/*Wide desktop*/
+@media screen and (min-width: 1200px){
+  body {
+    height: 100%;
+    grid-template-areas: 
+    "s1 s2 s3"
+    "a1 a2 ."
+    "n1 n2 .";
+  }
+}
+
+header {
+  display: grid;
+  width: 100%;
+  min-height: 15%;
+  grid-template-columns: 100%;
+}
+
+section {
+  min-height: 200px;
+}
+
+aside {
+  min-height: 200px;
+}
+
+article {
+  display: grid;
+  font-size: 1.5em;
+  grid-area: a;
+  grid-template-areas:
+  "s1 a1"
+  "s2 a2"
+  "s3 .";
+}
+
+footer {
+  display: grid;
+  width: 100%;
+  min-height: 15%;
+  grid-area: f;
+  grid-template-areas:
+  "n1 n2";
+}
+
+nav {
+  background-color: pink;
+  height: 10vh;
+}
+
+header nav {
+  width: 100%;
+}
+
+#sec1 {
+  background-color: lavender;
+  grid-area: s2;
+}
+
+#aside1 {
+  background-color: cornflowerblue;
+  grid-area: a1;
+}
+
+#sec2 {
+  background-color: royalblue;
+  grid-area: s2;
+}
+
+#aside2 {
+  background-color: purple;
+  grid-area: a2;
+}
+
+#sec3 {
+  background-color: lightgray;
+  grid-area: s3;
+}
+
+#nav1 {
+  background-color: maroon;
+  grid-area: n1;
+}
+
+#nav2 {
+  background-color: orangered;
+  grid-area: n2;
+}
