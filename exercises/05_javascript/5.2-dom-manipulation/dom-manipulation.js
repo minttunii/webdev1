@@ -8,7 +8,6 @@ function sortTableByColumn(col, table) {
   // TODO: Implement this function as instructed
   let rows = Array.from(table.querySelectorAll("tbody tr"))
   let tbody = table.querySelector('tbody');
-  let sort_col = [];
   rows.sort(function(a,b){return (a.children[col].innerHTML).localeCompare(b.children[col].innerHTML)});
   rows.forEach(tr => tbody.appendChild(tr));
 }
