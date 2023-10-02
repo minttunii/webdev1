@@ -17,7 +17,7 @@ document.addEventListener('userDataReady', function(event){
         console.log(card);
         // Avatar
         card.querySelector('img').src = elem.avatar;
-        card.querySelector('img').alt = elem.username;
+        card.querySelector('img').alt = elem.firstName.concat(" ", elem.lastName);
         // Heading
         card.querySelector('h1').innerText = elem.firstName.concat(" ", elem.lastName);
         // Email
@@ -27,7 +27,7 @@ document.addEventListener('userDataReady', function(event){
         // Address
         const address = card.getElementsByClassName("address").item(0).querySelectorAll('p');
         address.item(0).innerText = elem.address.streetAddress;
-        address.item(1).innerText = elem.address.zipCode;
+        address.item(1).innerText = elem.address.zipCode.concat(" ", elem.address.city);
         address.item(2).innerText = elem.address.country;
         // Homepage
         clone.querySelector(".homepage a").textContent = elem.homepage;
