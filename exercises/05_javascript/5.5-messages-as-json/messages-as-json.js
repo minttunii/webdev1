@@ -1,19 +1,17 @@
 const template = document.getElementById("user-card-template");
 let contacts = document.getElementById("contacts");
 
-console.log(template);
-
 document.addEventListener('userDataReady', function(event){
-    // Clone of the template
-    let clone = template.content.cloneNode(true);
-    console.log(clone);
-
     // Parse JSON data into array
     let jsonData = event.detail.jsonText;
     const jsonArr = JSON.parse(jsonData);
 
     // Iterate over all the user data
     jsonArr.forEach(elem => {
+         // Clone of the template
+        let clone = template.content.cloneNode(true);
+        console.log(clone);
+
         // Card div
         const card = clone.children.item(0);
         console.log(card);
@@ -39,13 +37,8 @@ document.addEventListener('userDataReady', function(event){
         // Add to contacts
         contacts.appendChild(clone);
     });
-
-
-
 });
 
-
- 
 
 fetchUserData();
 
