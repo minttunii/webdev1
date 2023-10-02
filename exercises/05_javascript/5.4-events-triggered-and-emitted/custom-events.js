@@ -22,7 +22,7 @@ document.addEventListener('rollDice', function(event) {
     if(roll_value == '-'){
         let value = 1;
         roll.children.item(1).innerHTML = value.toString();
-        total_rolls_value = 1;
+        total_rolls_value += 1;
         total_rolls.getElementsByTagName('span').item(0).innerHTML = total_rolls_value.toString();
 
     }
