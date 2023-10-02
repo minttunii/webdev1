@@ -6,15 +6,12 @@ document.addEventListener('userDataReady', function(event){
     let jsonData = event.detail.jsonText;
     const jsonArr = JSON.parse(jsonData);
 
-    // Iterate over all the user data
+    // Iterate over all the user data element
     jsonArr.forEach(elem => {
-         // Clone of the template
+        // Clone of the template
         let clone = template.content.cloneNode(true);
-        console.log(clone);
-
         // Card div
         const card = clone.children.item(0);
-        console.log(card);
         // Avatar
         card.querySelector('img').src = elem.avatar;
         card.querySelector('img').alt = elem.firstName.concat(" ", elem.lastName);
@@ -32,13 +29,10 @@ document.addEventListener('userDataReady', function(event){
         // Homepage
         clone.querySelector(".homepage a").textContent = elem.homepage;
         clone.querySelector(".homepage a").setAttribute("href", elem.homepage);
-        console.log(clone);
-
-        // Add to contacts
+        // Add clone to contacts
         contacts.appendChild(clone);
     });
 });
-
 
 fetchUserData();
 
