@@ -3,8 +3,6 @@ let total_rolls = document.getElementById("totals");
 let button = document.getElementById("roll-button");
 let templates = document.querySelectorAll('template');
 
-console.log(button);
-
 document.addEventListener('rollDice', function(event) {
     let value = event.detail.value;
 
