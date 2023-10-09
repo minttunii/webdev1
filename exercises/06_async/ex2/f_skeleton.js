@@ -8,7 +8,9 @@
  * @returns a new Promise, which resolves to the parameter value
  */
 const f = (value) => {
-  throw "Not yet implemented!";
+  if(isNaN(value)){throw 'Parameter is not a number!';}
+  const promise = Promise.resolve(value);
+  return promise;
 }
 
 /**
@@ -18,7 +20,12 @@ const f = (value) => {
  * @param {number} value
  */
 const g = (value) => {
-  throw "Not yet implemented!";
+  return f(value).then(value => {
+    return Math.log(value);
+  })
+  .catch(err => {
+    throw err;
+  })
 }
 
 /**
@@ -31,7 +38,13 @@ const g = (value) => {
  * a rejected Promise with message "Not a function!" otherwise
  */
 const checkIfFunction = (param) => {
-  throw "Not yet implemented!";
+  const promise = new Promise(function(resolve, reject){
+    if(typeof param != "function"){
+      reject("Not a function!");
+    }
+    resolve(true);
+  });
+  return promise;
 }
 
 /**
@@ -42,7 +55,16 @@ const checkIfFunction = (param) => {
  * @returns {an empty Promise after a given time}, if time is acceptable
  */
 const p = (time) => {
-  throw "Not yet implemented!";
+  const promise = new Promise(function(resolve, reject){
+    if(time > 2000){
+      reject("Too long time!");
+    }
+    else if(isNaN(time)){
+      reject("Not a number!");
+    }
+    resolve(time);
+  })
+  return promise;
 };
 
 //TODO: verify that all functions exported below are available for tests (they should be)
