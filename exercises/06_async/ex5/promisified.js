@@ -15,12 +15,16 @@ async function drawArrows(actors, timeout, drawArrow, i = 0) {
   // * a Promise as the truthy expression, and 
   // * null as the the falsy expression.
 
-  // TODO: conditional operator is fine  otherwise, but you must write the *resolve* callback function for the Promise in the conditional operator. Inside this resolve callback:
-  // * call drawArrow() with right parameters
+  // TODO: conditional operator is fine  otherwise, but you must write the *resolve* callback function for the Promise in the conditional operator.
+  // Inside this resolve callback: * call drawArrow() with right parameters
   // create a setTimeout(), its callback function is the Promise's resolve callback
   // this callback calls drawArrows() with the right parameters, after the set timeout period.
   
-  return i < actors.length * 2 - 2 ? new Promise(function(resolve){drawArrow(i, timeout, actors.length); resolve(setTimeout(drawArrows, timeout, actors, timeout, drawArrow, i+1))}) : null;
+  return i < actors.length * 2 - 1 ? new Promise(function(resolve){
+    if(i == actors.length -1){ i++; }
+    resolve(drawArrow(i, timeout, actors.length));
+    resolve(setTimeout(drawArrows, timeout, actors, timeout, drawArrow, i+1));})
+    : null;
 };
 
 
