@@ -8,7 +8,8 @@
  * @param {*} i the index of an array
  */
 async function drawArrows(actors, timeout, drawArrow, i = 0) {
-  // TODO: uncomment return statement with the conditional operator at the bottom of this function. MDN Conditional operator:  (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
+  // TODO: uncomment return statement with the conditional operator at the bottom of this function. 
+  // MDN Conditional operator:  (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
   // The conditional operator has:
   // * a condotion where i < actors.length * 2 - 2
   // * a Promise as the truthy expression, and 
@@ -18,8 +19,8 @@ async function drawArrows(actors, timeout, drawArrow, i = 0) {
   // * call drawArrow() with right parameters
   // create a setTimeout(), its callback function is the Promise's resolve callback
   // this callback calls drawArrows() with the right parameters, after the set timeout period.
-
-  //   return i < actors.length * 2 - 2 ? new Promise() : null;
+  
+  return i < actors.length * 2 - 2 ? new Promise(function(resolve){drawArrow(i, timeout, actors.length); resolve(setTimeout(drawArrows, timeout, actors, timeout, drawArrow, i+1))}) : null;
 };
 
 
