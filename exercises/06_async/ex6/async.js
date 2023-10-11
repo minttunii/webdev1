@@ -10,12 +10,19 @@
  * @param {*} drawArrow the callback to draw one single array
  * @param {*} i the index of the arrow
  */
+
+
 function drawArrows(actors, timeout, drawArrow, i = 0) {
-
-};
-
-
-
+    drawArrow(i, timeout, actors.length); i++;
+    async function f(){
+        for(; i<actors.length*2-1; i++){
+            if(i===actors.length-1){i++;}
+            await new Promise(resolve => setTimeout(resolve, timeout));
+            drawArrow(i, timeout, actors.length);
+        }
+   }
+   f();
+}
 
 /**
  * DO NOT TOUCH THIS: drawArrowSync is the utility function for sync.test.js
