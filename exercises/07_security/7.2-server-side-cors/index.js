@@ -19,7 +19,7 @@ http.createServer((req, res) => {
   const headers = {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': ['POST', 'GET', 'HEAD'],
-    'Access-Control-Max-Age': 100
+    'Access-Control-Max-Age': 14400
   };
 
   let filePath = path.join(__dirname, 'index.html');
@@ -44,8 +44,7 @@ http.createServer((req, res) => {
   // You can check if a header is present in request headers with if(!req.headers['yourHeaderNameHere']){..
   if(!req.headers['origin']){
     res.statusCode = 400;
-    res.statusMessage = 'Origin header not in the request';
-    res.end();
+    res.end("Origin header not in the request");
     return;
   }
 
