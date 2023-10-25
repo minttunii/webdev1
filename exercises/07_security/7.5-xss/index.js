@@ -25,10 +25,10 @@ http.createServer((request, response) => {
             </head>
             <body>
                 <p id="xss">Here be XSS!  queryObject['addThisText'] is now: </p>
-                ${queryObject['addThisText']}
+                ${encodeURIComponent(queryObject['addThisText'])}
             </body >
             </html >
     `);
-  console.log("queryObject['addThisText']: ", queryObject['addThisText']);
+  console.log("queryObject['addThisText']: ", encodeURIComponent(queryObject['addThisText']));
   response.end();
 }).listen(3000);
